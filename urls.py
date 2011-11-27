@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic import list_detail, DetailView, ListView
-from c10shop.mystore.models import Catalog, Category, Recipe, Purchase
-from c10shop.mystore.views import buyStuff, cancelPurchase, deliverContent, view_recipe, myStuff
+from mystore.models import Catalog, Category, Recipe, Purchase
+from mystore.views import buyStuff, cancelPurchase, deliverContent, view_recipe, myStuff
 from django.shortcuts import get_object_or_404
 from django.http import Http404
 from django.template import TemplateDoesNotExist
@@ -47,7 +47,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-    #url(r'^xhr_test$','c10shop.mystore.views.xhr_test'),
     url(r'^$', direct_to_template, {'template': 'home.html' }),
     url(r'^index/$', direct_to_template, {'template': 'home.html' }),
     url(r'^paypal/(\w+)/$', buyStuff),

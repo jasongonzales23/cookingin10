@@ -1,5 +1,5 @@
 from django.contrib import admin
-from c10shop.mystore.models import Catalog, Category, Recipe, Purchase, RecipeDetail
+from mystore.models import Catalog, Category, Recipe, Purchase, RecipeDetail
 
 class RecipeDetailInline(admin.StackedInline):
     model = RecipeDetail
