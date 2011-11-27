@@ -4,7 +4,7 @@ South==0.7.3
 Twisted==11.0.0
 django-polymorphic==0.2
 bdist-mpkg==0.4.4
-
+registration==0.7
 
 
 
