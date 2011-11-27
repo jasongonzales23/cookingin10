@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block base_content%}
+
+{% if user.is_authenticated %}
+
+ <h2>{{ recipe.name }}</h2>
+ <h3><a href="{{ recipe.get_absolute_url }}">
+ {{ recipe.name }}</a></h3>
+ <p>{{ recipe.description }}</p>
+ <!--<a href="/paypal/{{ recipe.prodID }}" class="paypalDG" id="{{ recipe.prodID }}"><img src="https://www.paypal.com/en_US/i/btn/btn_dg_pay_w_paypal.gif"/></a>-->
+ <video controls="" src="{{MEDIA_URL}}{{ recipe.video }}"></video>
+<!--<video controls="" autoplay="" name="media" src="http://mediaelementjs.com/media/echo-hereweare.mp4"></video>-->
+<h4>Details</h4>
+<table>
+ <tbody>
+ {% for detail in detail_list %}
+  <tr>
+   <td>{{ detail.ingredient }}</td>
+   <td>{{ detail.amount }}</td>
+   <td>{{ detail.cost}}</td>
+  </tr>
+ {% endfor %}
+ </tbody>
+</table>
+
+<p>{{ recipe.ingredient_total_cost}}</p>
+<p>{{ recipe.servings }}</p>
+<p>{{ recipe.cost_per_serving}}</p>
+ 
+{% endif %}
+
+{% endblock %}
+

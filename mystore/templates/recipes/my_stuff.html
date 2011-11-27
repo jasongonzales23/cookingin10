@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block base_content %}
+
+{% if user.is_authenticated %}
+    
+<h1>This is my stuff</h1>
+<p>{{ user.username }}</p>
+
+{% if purchase_list %}
+    
+{% for purchase in purchase_list %}
+<li><a href="{{ purchase.recipe.get_absolute_url }}/">{{ purchase.recipe.name }} - ${{ purchase.recipe.price|floatformat:2 }}</a></li>
+
+{% endfor %}
+
+{% else %}
+    
+<p> no purchases yet </p>
+
+{% endif %}
+
+<p><a href="{% url auth_logout %}">{% trans "Log out" %}</a></p>
+
+{% else %}
+
+<p>{% trans "You need to log in first" %}</p>
+<p><a href="{% url auth_login %}">{% trans "Log in" %}</a></p>
+
+{% endif %}
+
+{% endblock %}

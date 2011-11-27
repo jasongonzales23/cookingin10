@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block body_class %}home{% endblock %}
+{% block base_content%}
+<div id="slideshow">
+  <div class="left-arrow">
+  </div>
+  <div id="slides">
+      <a href="#videos" class="video_link" id="ruby-red-trout">
+        <img src="{{ STATIC_URL }}img/slideshow/ruby-red-trout.jpg"/>
+      </a>
+      <a href="#videos" class="video_link" id="diceOnion">
+        <img src="{{ STATIC_URL }}img/slideshow/diceOnion.jpg" />
+      </a>
+      <a href="http://www.myfox28columbus.com/newsroom/gdc/videos/vid_600.shtml" target="_blank">
+        <img src="{{ STATIC_URL }}img/slideshow/promo-slide.jpg" alt="Watch Superchef on FOX August 11"/>
+      </a>
+  </div>
+  <div class="right-arrow">
+  </div>
+</div>
+
+{% endblock %}

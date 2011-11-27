@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block page_title %}Recipes - {{ category.name }}{% endblock %}
+{% block base_content%}
+<div class="main-content">
+ {% if user.is_authenticated %}
+<p>Hello: {{ user.username }}</p>
+<p>Some text about how to watch videos</p>
+{% endif %}
+ <h2>{{ category.name }}</h2>
+{% for recipe in recipe_list %}
+ <div class="recipe-block">
+  {# <a href="{{ recipe.get_absolute_url }}"></a>#}
+  <h3>{{ recipe.name }}</h3>
+  <img src="{{MEDIA_URL}}{{ recipe.thumbnail }}" />
+  <p>{{ recipe.description }}</p>
+  <a  href="/paypal/{{ recipe.prodID }}" class="paypalDG" id="{{ recipe.prodID }}"><img src="https://www.paypal.com/en_US/i/btn/btn_dg_pay_w_paypal.gif"/></a>
+ </div>
+{% endfor %}
+
+ <script>
+ {% for recipe in recipe_list %}
+  var embeddedFlow{{ recipe.prodID }} = new PAYPAL.apps.DGFlow({ trigger:'{{ recipe.prodID }}'});
+ {% endfor %}
+ </script>
+</div>
+{% endblock %}

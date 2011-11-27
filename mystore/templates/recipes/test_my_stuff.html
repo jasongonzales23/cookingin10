@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block base_content %}
+
+{% for purchase in purchase_list %}
+    
+    Recipe: {{ purchase.recipe.name }}
+    Url: {{ purchase.recipe.get_absolute_url }}
+    
+{% endfor %}
+
+{% endblock %}

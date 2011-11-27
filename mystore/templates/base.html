@@ -1,0 +1,136 @@
+<!doctype html>
+  <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block page_title %}Cooking in 10{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}" />
+    <meta name="author" content="{% block meta_author %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {# TODO: <link rel="shortcut icon" href="{{ STATIC_URL }}/media/img/favicon.ico" /> #}
+    {# TODO: <link rel="apple-touch-icon" href="{{ STATIC_URL }}/media/img/apple-touch-icon.png" /> #}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css?v=2" />
+    <script src="{{ STATIC_URL }}js/libs/modernizr-2.0.6.min.js"></script>
+    <script src="https://www.paypalobjects.com/js/external/dg.js"></script>
+  </head>
+  <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+    <div id="container">
+        <header>
+          <div class="box">
+            <div class="nav">
+                  <ul>
+                      <li><a href="/">Home</a></li>
+                      <li id="cookingSchool">
+                        <a href="/cooking-school/">Cooking School</a>
+                      </li>
+                      <li id="find-recipes">Find Recipes
+                        <div class="sub">
+                          <ul class="mega-menu">
+                            <li><h3>Categories</h3></li>
+                            <li>
+                              <ul id="categories">
+                                  <li><a href="/recipes/poultry" id="poultry">Poultry</a></li>
+                                  <li><a href="/recipes/beef" id="beef">Beef</a></li>
+                                  <li><a href="/recipes/pork" id="pork">Pork</a></li>
+                                  <li><a href="/recipes/seafood" id="seafood">Seafood</a></li>
+                                  <li><a href="/recipes/kids" id="kids">Kids</a></li>
+                                  <li><a href="/recipes/sides" id="sides">Sides</a></li>
+                                  <li><a href="/recipes/vegetarian" id="vegetarian">Vegetarian</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li id="meet-the-chef"><a href="/accounts/login">Login/Register</a>
+                      </li>
+                  </ul>
+              </div>
+            <div id="social">
+                  <ul>
+                      <li>
+                        <a href="http://twitter.com/SuperChef_23" class="social" target="_blank">
+                          <img src="{{ STATIC_URL }}img/twitter-icon.png" alt="twitter" height="32" width="31"/>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="http://www.facebook.com/pages/Columbus-OH/Cookingin10com/91729369875?ref=nf#!/pages/Columbus-OH/Cookingin10com/91729369875?v=wall&ref=nf" class="social"target="_blank">
+                          <img src="{{ STATIC_URL }}img/facebook-icon.png" alt="facebook" height="32" width="32"/>
+                        </a>
+                      </li>
+                  </ul>
+            </div>
+          </div>
+        </header>
+        
+        <div id="main" role="main">
+           {% block base_content%}Base Content{% endblock %}
+          
+        </div>
+      <div id="bottom">
+          <div class="box">
+              <!--div id="offer-tab">
+                  <h3 class="countdown">NEW VIDEOS!</h3>
+                  <p>
+                  recipes and cooking lessons<br />
+                  added every week
+                  </p>
+              </div-->
+              <div class="bottom-box">
+                  <h2>T-Shirts</h2>
+                  <p>Show your Cookingin10 pride and get a T-shirt! <a href="http://skreened.com/discover/designs/search?query=cookingin10" target="_blank">Click here to purchase one of our T-shirt designs from Skreened</a></p>
+              </div>
+              <div class="bottom-box">
+                  <h2>Booking Info</h2>
+                  <p>For catering and live cooking dinners email me at: <a href="mailto:superchef09@yahoo.com">superchef09@yahoo.com</a></p>
+              </div>
+              <div class="bottom-box">
+                  <h2>Stop Hunger</h2>
+                  <p>Cookingin10 and SuperChef are doing their part to raise awareness to help end world hunger. Food should not be viewed as a commodity, but a right! Do your part!! &mdash;Darnell "SuperChef" Ferguson.</p>
+              </div>
+              <div class="bottom-box">
+                  <h2>About Me</h2>
+                  <p>I'm Darnell Ferguson, also known as "Super Chef". I am Executive chef and Founder of Cookingin10.com. I was recruited out of high school by one of the top culinary schools in the nation, Sullivan University where I graduated as one of the top Chefs in my class. Most people are surprised at how much I have accomplished in my profession at such a young age. At 21 years of age I was honored to travel to China as an Olympic Chef in the 2008 Summer Olympics. In my young career I have done it all, from cooking for athletes, government Officials, and even President George H. Bush.</p>
+                      <p>I created Cookingin10.com with two main goals: to help people understand how to make the time in the kitchen fun and to give people an alternative to other cooking sites out there.</p>
+              </div>  
+          </div>
+        </div>
+        
+        <footer>
+          In Loving Memory of Chef Kenny Black
+          <div id="copyright">Copyright 2012 Cookingin10.com | No material may be reproduced or redistributed without consent of Cookingin10.com</div>
+        </footer>
+    </div> <!-- end of #container -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  
+  
+    <!-- scripts concatenated and minified via ant build script-->
+    <script defer src="{{ STATIC_URL }}js/plugins.js"></script>
+    <script src="{{ STATIC_URL }}js/mylibs/mediaelement/build/mediaelement-and-player.min.js"></script>
+    <script defer src="{{ STATIC_URL }}js/script.js"></script>
+    <!-- end scripts-->
+  
+  
+    <!--script> // Change UA-XXXXX-X to be your site's ID
+      window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+      Modernizr.load({
+        load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+      });
+    </script-->
+  
+  
+    <!--[if lt IE 7 ]>
+      <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+      <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+    <![endif]-->
+      
+  </body>
+</html>
+
+
+
