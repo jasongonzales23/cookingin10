@@ -31,7 +31,7 @@ class Recipe(models.Model):
     slug = models.SlugField(max_length=255)
     prodID = models.CharField(max_length=30)
     description= models.CharField(max_length=255)
-    thumbnail = models.ImageField(upload_to='uploads/thumbnails', blank=True)
+    thumbnail = models.CharField(upload_to='uploads/thumbnails', blank=True)
     video = models.FileField(upload_to='uploads/videos')
     price = models.DecimalField(max_digits=6, decimal_places=2)
     pub_date = models.DateTimeField(default=datetime.now())
